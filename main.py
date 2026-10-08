@@ -13,19 +13,22 @@ while True:
     print('[5] Excluir aluno')
     print('[6] Estatísticas')
     print('[7] Sair')
-    opcao = int(input('Escolha uma opção: '))
+    try:
+        opcao = int(input('Escolha uma opção: '))
+    except ValueError:
+        print('\033[1;31mDigite apenas números!\033[m') #"\033[m" dar cores, 1 = negrito, 31 = vermelho
+        continue
 
     if opcao == 1:
         cadastrarAluno(alunos)
-        print(alunos)
     elif opcao == 2:
         listarAlunos(alunos)
     elif opcao == 3:
         buscarAluno(alunos)
     elif opcao == 4:
-        print('Editar aluno')
+        editarAluno(alunos)
     elif opcao == 5:
-        print('Excluir aluno')
+        excluirAlunos(alunos)
     elif opcao == 6:
         print('estatisticas')
     elif opcao == 7:
