@@ -1,4 +1,4 @@
-def cabecalho():
+def cabecalho(nome):
     print('-='*20)
-    print('           SISTEMA DE ALUNOS           ')
+    print(nome.center(40))
     print('-='* 20)

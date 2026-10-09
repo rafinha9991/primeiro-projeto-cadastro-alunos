@@ -1,4 +1,5 @@
 from time import sleep
+from funcoes.interface.interface import cabecalho
 def cadastrarAluno(alunos):
     nome = input('Digite o nome: ')
     idade = int(input('Idade: '))
@@ -110,4 +111,40 @@ def excluirAlunos(alunos):
                 sleep(1)
                 break
 def estatisticasAlunos(alunos):
-    
+    if len(alunos) == 0:
+        print('\033[1;31mNão existem alunos cadastrados!\033[m')
+        return
+    #maior e menor idade
+    maiorIdade = menorIdade = alunos[0]['idade']
+    somaIdade = maior = menor = 0
+    for aluno in alunos:
+
+        if aluno['idade'] > maiorIdade:
+            maiorIdade = aluno['idade']
+
+        if aluno['idade'] < menorIdade:
+            menorIdade = aluno['idade']
+        #media
+        somaIdade += aluno['idade']
+    media = somaIdade/len(alunos)
+
+    #maiores e menores de idade
+    for aluno in alunos:
+        if aluno['idade'] >= 18:
+            maior += 1
+        else:
+            menor += 1
+
+    cabecalho('ESATISTICAS')
+    sleep(1)
+    print(f'Total de alunos: {len(alunos)}')
+    sleep(0.6)
+    print(f'Maior idadae: {maiorIdade}')
+    sleep(0.6)
+    print(f'Menor idade: {menorIdade}')
+    sleep(0.6)
+    print(f'Média das idades: {media}')
+    sleep(0.6)
+    print(f'Maiores de idade: {maior}')
+    sleep(0.6)
+    print(f'Menores de idade: {menor}')

@@ -5,7 +5,7 @@ alunos = list()
 
 while True:
     sleep(1.3)
-    cabecalho()
+    cabecalho('SISTEMA DE ALUNOS')
     print('[1] Cadastrar novo aluno')
     print('[2] Listar alunos')
     print('[3] Buscar aluno')
@@ -30,7 +30,7 @@ while True:
     elif opcao == 5:
         excluirAlunos(alunos)
     elif opcao == 6:
-        print('estatisticas')
+        estatisticasAlunos(alunos)
     elif opcao == 7:
         print('Saindo .', end= ' ')
         sleep(0.7)
