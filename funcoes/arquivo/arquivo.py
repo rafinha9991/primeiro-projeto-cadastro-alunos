@@ -143,7 +143,7 @@ def estatisticasAlunos(alunos):
     sleep(0.6)
     print(f'Menor idade: {menorIdade}')
     sleep(0.6)
-    print(f'Média das idades: {media}')
+    print(f'Média das idades: {media:.2f}')
     sleep(0.6)
     print(f'Maiores de idade: {maior}')
     sleep(0.6)
